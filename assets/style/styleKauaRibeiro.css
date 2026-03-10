@@ -18,6 +18,8 @@ strong {
 }
 
 header, footer {
+    position: absolute;
+    width: 100%;
     text-align: center;
     padding: 20px;
     color: white;
@@ -31,16 +33,19 @@ header button {
     padding: 7px 10px;
     border-radius: 10px;
     color: white;
-    border: 1px solid white;
-    background-color: rgb(4, 23, 109);
+    border: 0px solid transparent;
+    background-color: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+header button:hover {
+    color: black;
+    background-color: white;
 }
 footer {
-    position: absolute;
     bottom: 0;
-    width: 100%;
 }
 main {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -75,6 +80,10 @@ section {
 .infos {
     gap: 10px;
     display: flex;
+    transition: 0.5s;
+}
+.infos:hover {
+    transform: translateY(-10px);
 }
 .infos:nth-child(1) {
     flex: 1;
@@ -87,7 +96,8 @@ section {
 }
 
 .barra {
-    width: 10px;
+    min-width: 7px;
+    max-width: 7px;
     background-color: var(--corAzul);
 }
 
@@ -98,4 +108,10 @@ section {
 }
 #curiosidades li {
     margin-left: 50px;
+}
+
+@media (max-width: 900px) {
+    #infos-lugar {
+        flex-direction: column;
+    }
 }
